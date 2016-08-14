@@ -1,0 +1,337 @@
+/* header */
+
+#header {
+  background:
+    /* Bokeh */
+    radial-gradient(rgba(255,255,255,.025) 0, rgba(255,255,255,.025) 30%, rgba(255,255,255,.04) 32%, rgba(255,255,255,0) 33%) 0 0,
+    radial-gradient(rgba(255,255,255,.015) 0, rgba(255,255,255,.015) 11%, rgba(255,255,255,.04) 13%, rgba(255,255,255,0) 14%) 0 0,
+    radial-gradient(rgba(255,255,255,.035) 0, rgba(255,255,255,.035) 17%, rgba(255,255,255,.045) 19%, rgba(255,255,255,0) 20%) 0 110px,
+    radial-gradient(rgba(255,255,255,.035) 0, rgba(255,255,255,.035) 11%, rgba(255,255,255,.045) 13%, rgba(255,255,255,0) 14%) -130px -170px,
+    radial-gradient(rgba(255,255,255,.035) 0, rgba(255,255,255,.035) 11%, rgba(255,255,255,.045) 13%, rgba(255,255,255,0) 14%) 130px 370px,
+    radial-gradient(rgba(255,255,255,.015) 0, rgba(255,255,255,.015) 11%, rgba(255,255,255,.035) 13%, rgba(255,255,255,0) 14%) 0 0,
+    /* Background */
+    radial-gradient(1000px at 50px 50%, #1d384a, #091d3b) 100%;
+  background-size:
+    270px 270px,
+    770px 770px,
+    210px 210px,
+    410px 410px,
+    330px 330px,
+    530px 530px,
+    100% 100%;
+}
+#header-img {
+  margin: 0
+}
+
+.redditname {
+  font-family: helvetica;
+  font-variant: normal;
+  letter-spacing: 2px;
+  position: absolute;
+  top: 30px;
+  left: 125px;
+  font-size: 30px;
+  font-weight: 300;
+  color: #fafafa;
+  text-decoration: none;
+}
+
+.redditname a,
+.redditname a:hover {
+  color: #fafafa;
+  text-decoration: none;
+}
+
+.tabmenu {
+  position: absolute;
+  top: 70px;
+  left: 125px;
+  margin: 0;
+}
+
+.tabmenu li {
+  display: inline-block;
+}
+
+.tabmenu li:nth-of-type(8) {
+  display: none;
+  visibility: hidden
+}
+
+.tabmenu li a {
+  display: inline-block;
+  padding: 0 10px;
+  line-height: 2.5;
+  border-radius: 3px;
+  border: none;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-weight: normal;
+  background: linear-gradient(to bottom, #193f61, #237699);
+  color: #16c1f5;
+}
+
+.tabmenu li a:hover {
+  background: #1298c9;
+  color: #d4f2fa;
+}
+
+.tabmenu li.selected a {
+  border: 2px solid #b3def5;
+  box-shadow: 0 0 5px 2px #419ebf, inset 0 0 20px 0 #419ebf;
+  color: #d4f2fa;
+}
+
+/* ticker */
+
+.titlebox .md h6 {
+  position: absolute;
+  top: 113px;
+  left: 0;
+  right: 0;
+  background: radial-gradient(1000px at 50px 50%,#1d384a,#091d3b) 100%;
+  color: #fafafa;
+  height: 30px;
+  line-height: 30px;
+  padding-left: 15px;
+  overflow: hidden;
+  white-space: nowrap;
+  font-size: 12px;
+  text-decoration: none;
+  cursor: default;
+}
+
+.titlebox .md h6 a {
+  color: #16c1f5;
+}
+
+.titlebox .md h6 strong {
+  display: block;
+  text-indent: 0
+}
+
+/* sidebar */
+
+.side {
+  margin-top: 33px;
+}
+
+.morelink {
+  position: relative;
+  border: 0;
+  height: auto;
+  text-align: left;
+  font-size: 18px;
+  color: #69c4f5;
+  background: radial-gradient(circle at top left, #2f6580, #133d61);
+  border-radius: 0;
+  box-shadow: 0 0 10px rgba(0,0,0,0.75);
+}
+.morelink .nub {
+  display: none;
+}
+.morelink a {
+  box-sizing: border-box;
+  position: relative;
+  padding: 5px 10px;
+  font-weight: normal;
+  color: #69c4f5;
+  z-index: 2;
+
+  transition: 250ms ease-in-out;
+}
+.morelink::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: radial-gradient(circle at top left, #66c1f2, #197fb3);
+  opacity: 0;
+  z-index: 0;
+
+  transition: 250ms ease-in-out;
+}
+.morelink::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: linear-gradient(to left, rgba(178, 223, 247, 1), rgba(178, 223, 247, 1) 66%, rgba(178, 223, 247, 0));
+  opacity: 0;
+  z-index: 1;
+}
+@keyframes pulse {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.morelink:hover {
+  color: #072d45;
+  background: radial-gradient(circle at top left, #2f6580, #133d61);
+}
+.morelink:hover a {
+  color: #072d45;
+  text-indent: 0.5ex;
+}
+.morelink:hover::before {
+  opacity: 1;
+}
+.morelink:hover::after {
+  animation: pulse 1000ms ease-in infinite alternate;
+}
+
+.submit-text {
+  margin-top: -8px;
+}
+
+#reddit-field {
+  display: none
+}
+
+.side h3 a,.side h4 a {
+  box-sizing: border-box;
+  display: inline-block;
+  position: relative;
+  width: 70%;
+  height: 30px;
+  padding: 5px;
+  text-align: right;
+  border-radius: 10px;
+  color: #fff;
+  font-size: 12px;
+  font-weight: bold
+}
+
+.side h3 a {
+  background: #0a0
+}
+
+.side h4 a {
+  background: #a00
+}
+
+/* posts */
+
+body>.content {
+  margin-top: 40px
+}
+
+.thumbnail.self, .thumbnail.default {
+  background-image: none;
+}
+
+.thumbnail::before {
+  content: "";
+  z-index: 100;
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center
+}
+
+.linkflairlabel {
+  border: 0;
+  padding: 5px;
+  max-width: none;
+  vertical-align: middle;
+  text-overflow: initial;
+  color: #d4f2fa;
+  background: #2a5f78;
+  border-radius: 3px;;
+  cursor: default;
+}
+
+.linkflair-news .thumbnail::before {
+  background-image: url(%%icon-news%%);
+}
+
+.linkflair-discussion .thumbnail::before {
+  background-image: url(%%icon-discussion%%);
+}
+
+.linkflair-configuration .thumbnail::before {
+  background-image: url(%%icon-configuration%%);
+}
+
+.linkflair-support .thumbnail::before {
+  background-image: url(%%icon-support%%);
+}
+
+.linkflair-meta .thumbnail::before {
+  background-image: url(%%icon-meta3%%);
+}
+
+.arrow {
+  background-size: contain;
+  background-position: center !important; /* Sorry for using !important */
+}
+
+.arrow.up {
+  background-image: url(%%arrow-up%%);
+}
+
+.arrow.upmod {
+  background-image: url(%%arrow-upmod%%);
+}
+
+.arrow.down {
+  background-image: url(%%arrow-down%%);
+}
+
+.arrow.downmod {
+  background-image: url(%%arrow-downmod%%);
+}
+
+/* hide stuff */
+
+html:lang(en) .side h3 a:not([href*="#xh"]),
+html:lang(en) .side h4 a:not([href*="#xh"]),
+html:lang(xa) .side h3 a:not([href*="#xa"]),
+html:lang(xa) .side h4 a:not([href*="#xa"]),
+html:lang(xa) .linkflair-news,
+html:lang(xa) .linkflair-discussion,
+html:lang(xa) .linkflair-configuration,
+html:lang(xa) .linkflair-support,
+html:lang(xa) .linkflair-meta,
+html:lang(xb) .side h3 a:not([href*="#xb"]),
+html:lang(xb) .side h4 a:not([href*="#xb"]),
+html:lang(xb) .linkflair-news,
+html:lang(xb) .linkflair-discussion,
+html:lang(xb) .linkflair-configuration,
+html:lang(xb) .linkflair-support,
+html:lang(xc) .side h3 a:not([href*="#xc"]),
+html:lang(xc) .side h4 a:not([href*="#xc"]),
+html:lang(xc) .linkflair-news,
+html:lang(xc) .linkflair-discussion,
+html:lang(xc) .linkflair-meta,
+html:lang(xd) .side h3 a:not([href*="#xd"]),
+html:lang(xd) .side h4 a:not([href*="#xd"]),
+html:lang(xd) .linkflair-news,
+html:lang(xd) .linkflair-discussion,
+html:lang(xe) .side h3 a:not([href*="#xe"]),
+html:lang(xe) .side h4 a:not([href*="#xe"]),
+html:lang(xe) .linkflair-configuration,
+html:lang(xe) .linkflair-support,
+html:lang(xe) .linkflair-meta,
+html:lang(xf) .side h3 a:not([href*="#xf"]),
+html:lang(xf) .side h4 a:not([href*="#xf"]),
+html:lang(xf) .linkflair-configuration,
+html:lang(xf) .linkflair-support,
+html:lang(xg) .side h3 a:not([href*="#xg"]),
+html:lang(xg) .side h4 a:not([href*="#xg"]),
+html:lang(xg) .linkflair-meta,
+html:lang(xh) .side h3 a:not([href*="#xh"]),
+html:lang(xh) .side h4 a:not([href*="#xh"]) {
+  display: none
+}
