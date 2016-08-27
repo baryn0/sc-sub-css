@@ -816,8 +816,11 @@ body.submit-page {
     box-shadow: 0 0 6px rgba(0,0,0,0.5);
   }
   .roundfield .title {
-    text-transform: uppercase;
     color: #308aba;
+
+    &:not(textarea):not(input) {
+      text-transform: uppercase;
+    }
   }
 
   .md {
