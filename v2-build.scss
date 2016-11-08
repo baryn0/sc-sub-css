@@ -592,6 +592,15 @@ body.submit-page {
   .comment .usertext-body .md p {
     color: #fff;
   }
+  .comment .usertext-body .md {
+    p {
+      color: #fff;
+    }
+    blockquote,
+    del {
+      color: #aaa;
+    }
+  }
   .comment .child,
   .comment .showreplies {
     border: 0;
