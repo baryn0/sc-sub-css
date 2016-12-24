@@ -5,50 +5,53 @@
   height: 125px;
   background: radial-gradient(circle at 50% 0, rgb(13, 48, 74), rgba(13, 48, 74, 0)) no-repeat #061026;
   box-shadow: 0 0 40px #000;
-  overflow: hidden;
 }
 #header-bottom-left {
+  box-sizing: border-box;
   position: relative;
-  top: calc(50% - 21px - 48px / 2);
-}
-
-@keyframes bokeh-troll {
-  33% {
-    opacity: 1;
+  padding-top: 18px;
+  height: calc(100% - 19px);
+  overflow: hidden;
+  
+  @keyframes bokeh-troll {
+    33% {
+      opacity: 1;
+    }
+    100% {
+      transform: translate3d(-33%, -66%, 0);
+      opacity: 0;
+    }
   }
-  100% {
-    transform: translate3d(-33%, -66%, 0);
+  
+  &::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 200%;
+    height: 300%;
+    background:
+      /* Bokeh */
+      radial-gradient(rgba(255,64,64,.075) 0, rgba(255,64,64,.075) 30%, rgba(255,64,64,.015) 32%, rgba(255,64,64,0) 33%) 0 0,
+      radial-gradient(rgba(255,64,64,.075) 0, rgba(255,64,64,.075) 11%, rgba(255,64,64,.015) 13%, rgba(255,64,64,0) 14%) 0 0,
+      radial-gradient(rgba(128,255,128,.045) 0, rgba(128,255,128,.045) 17%, rgba(128,255,128,.035) 19%, rgba(128,255,128,0) 20%) 0 110px,
+      radial-gradient(rgba(255,255,255,.045) 0, rgba(255,255,255,.045) 11%, rgba(255,255,255,.035) 13%, rgba(255,255,255,0) 14%) -130px -170px,
+      radial-gradient(rgba(128,128,255,.045) 0, rgba(128,128,255,.045) 11%, rgba(128,128,255,.035) 13%, rgba(128,128,255,0) 14%) 130px 370px,
+      radial-gradient(rgba(255,255,255,.035) 0, rgba(255,255,255,.035) 11%, rgba(255,255,255,.015) 13%, rgba(255,255,255,0) 14%) 0 0;
+    background-size:
+      270px 270px,
+      770px 770px,
+      210px 210px,
+      410px 410px,
+      330px 330px,
+      530px 530px,
+      100% 100%;
+    transform: translateZ(0);
     opacity: 0;
+    pointer-events: none;
+  
+    animation: bokeh-troll 30000ms linear infinite;
   }
-}
-
-#header::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 200%;
-  height: 300%;
-  background:
-    /* Bokeh */
-    radial-gradient(rgba(255,64,64,.075) 0, rgba(255,64,64,.075) 30%, rgba(255,64,64,.015) 32%, rgba(255,64,64,0) 33%) 0 0,
-    radial-gradient(rgba(255,64,64,.075) 0, rgba(255,64,64,.075) 11%, rgba(255,64,64,.015) 13%, rgba(255,64,64,0) 14%) 0 0,
-    radial-gradient(rgba(128,255,128,.045) 0, rgba(128,255,128,.045) 17%, rgba(128,255,128,.035) 19%, rgba(128,255,128,0) 20%) 0 110px,
-    radial-gradient(rgba(255,255,255,.045) 0, rgba(255,255,255,.045) 11%, rgba(255,255,255,.035) 13%, rgba(255,255,255,0) 14%) -130px -170px,
-    radial-gradient(rgba(128,128,255,.045) 0, rgba(128,128,255,.045) 11%, rgba(128,128,255,.035) 13%, rgba(128,128,255,0) 14%) 130px 370px,
-    radial-gradient(rgba(255,255,255,.035) 0, rgba(255,255,255,.035) 11%, rgba(255,255,255,.015) 13%, rgba(255,255,255,0) 14%) 0 0;
-  background-size:
-    270px 270px,
-    770px 770px,
-    210px 210px,
-    410px 410px,
-    330px 330px,
-    530px 530px,
-    100% 100%;
-  transform: translateZ(0);
-  opacity: 0;
-
-  animation: bokeh-troll 30000ms linear infinite;
 }
 
 
@@ -140,7 +143,7 @@ ul.tabmenu li a {
 
 .tabmenu li:nth-child(7) {
   position: absolute;
-  top: 15px;
+  top: 33px;
   right: 10px;
   font-size: 24px;
   font-weight: normal;
@@ -593,10 +596,10 @@ body.submit-page {
     color: #fff;
   }
   .comment .usertext-body .md {
-    p {
+    p,
+    blockquote {
       color: #fff;
     }
-    blockquote,
     del {
       color: #aaa;
     }
@@ -662,7 +665,7 @@ body.submit-page {
     color: #fff;
   }
   .submit_text .md blockquote {
-    color: gray;
+    color: #fff;
   }
 
   /* Background Animation */
