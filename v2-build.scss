@@ -429,6 +429,49 @@ body.submit-page {
     color: #688699;
     background: none;
   }
+  
+  /* Flair - Users */
+  
+  .flair-icon {
+    font-size: 0;
+    color: rgba(0,0,0,0);
+    
+    &::before,
+    &::after {
+      display: inline-block;
+      margin: 0 0 0 2px;
+      width: 20px;
+      height: 12px;
+      background: 0 0 no-repeat;
+      background-size: auto 100%;
+    }
+    
+    &.flair-icon-steamcontroller::before {
+      content: '';
+      background-image: url(%%flair-steamcontroller%%);
+    }
+    &.flair-icon-dualshock4::before {
+      content: '';
+      background-image: url(%%flair-dualshock4%%);
+    }
+    &.flair-icon-xboxonecontroller::before {
+      content: '';
+      background-image: url(%%flair-xboxonecontroller%%);
+    }
+    
+    &.flair-icon-win::after {
+      content: '';
+      background-image: url(%%flair-win%%);
+    }
+    &.flair-icon-mac::after {
+      content: '';
+      background-image: url(%%flair-mac%%);
+    }
+    &.flair-icon-lin::after {
+      content: '';
+      background-image: url(%%flair-lin%%);
+    }
+  }
 
 
   /* Posts / Comments */
@@ -570,8 +613,21 @@ body.submit-page {
   ul.report-reasons {
     color: #111;
   }
+  .flairselector li {
+    border: 0;
+  }
+  .flairselector .customizer {
+    margin-top: 10px;
+  }
   .flairselector .customizer input {
     width: 115px;
+  }
+  
+  .drop-choices {
+    border: 0 !important;
+    background: radial-gradient(circle at top left,rgba(31,78,102,1),rgba(16,52,82,1));
+    border-radius: 3px;
+    box-shadow: 0 0 5px 3px #419ebf;
   }
 
   .link .usertext-body .md {
